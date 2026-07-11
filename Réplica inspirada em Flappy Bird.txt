@@ -1,0 +1,132 @@
+Você é um desenvolvedor de jogos 2D especialista em Python e Pygame.
+
+Crie um jogo completo inspirado na mecânica de Flappy Bird, sem utilizar imagens, sons, nomes, personagens ou recursos protegidos do jogo original.
+
+## Objetivo
+
+Desenvolver um jogo arcade em que o jogador controla um pássaro estilizado, precisa atravessar espaços entre obstáculos e acumula pontos conforme avança.
+
+## Tecnologia
+
+* Python 3.
+* Pygame.
+* O jogo deve funcionar localmente em uma janela desktop.
+* Todos os elementos visuais devem ser desenhados com formas geométricas do próprio Pygame.
+
+## Mecânica principal
+
+* O personagem deve sofrer ação constante da gravidade.
+* O jogador deve fazê-lo subir usando:
+
+  * barra de espaço;
+  * seta para cima;
+  * clique do mouse.
+* O impulso deve ser imediato, mas a movimentação precisa preservar uma sensação de inércia.
+* Obstáculos verticais devem se mover da direita para a esquerda.
+* Cada conjunto de obstáculos deve possuir:
+
+  * uma parte superior;
+  * uma parte inferior;
+  * um espaço livre entre elas.
+* A posição vertical do espaço deve variar de forma aleatória, respeitando limites que mantenham o jogo possível.
+* O jogador ganha um ponto ao ultrapassar completamente um conjunto de obstáculos.
+* O jogo deve terminar quando o personagem:
+
+  * tocar em um obstáculo;
+  * tocar no chão;
+  * ultrapassar o limite superior permitido.
+
+## Fluxo do jogo
+
+Implemente três estados:
+
+1. Tela inicial:
+
+   * título;
+   * instrução para começar;
+   * melhor pontuação da sessão.
+
+2. Partida:
+
+   * movimentação;
+   * obstáculos;
+   * pontuação atual;
+   * dificuldade progressiva.
+
+3. Fim de jogo:
+
+   * pontuação final;
+   * melhor pontuação;
+   * opção para reiniciar;
+   * opção para sair.
+
+## Dificuldade progressiva
+
+A dificuldade deve aumentar de maneira controlada conforme a pontuação cresce. Utilize uma ou mais destas estratégias:
+
+* aumento gradual da velocidade dos obstáculos;
+* redução moderada do espaço entre os obstáculos;
+* menor intervalo entre novos obstáculos.
+
+A progressão não deve tornar o jogo impossível abruptamente.
+
+## Requisitos visuais
+
+Crie um visual original e simples utilizando:
+
+* céu com gradiente ou faixas de cor;
+* nuvens ou elementos decorativos gerados por formas geométricas;
+* personagem desenhado com círculos, elipses e polígonos;
+* obstáculos com acabamento visual;
+* chão com movimento horizontal;
+* textos legíveis e centralizados.
+
+Adicione uma pequena animação ao personagem, como:
+
+* inclinação baseada na velocidade vertical;
+* movimento das asas;
+* oscilação na tela inicial.
+
+## Estrutura técnica
+
+Organize o projeto utilizando classes ou módulos claros, por exemplo:
+
+* `Game`;
+* `Player`;
+* `Obstacle`;
+* controle de estados;
+* gerenciamento de pontuação;
+* detecção de colisões;
+* renderização.
+
+Use colisões coerentes com os elementos visuais. Não utilize uma caixa de colisão muito maior que o personagem.
+
+## Entrega
+
+Forneça:
+
+1. Estrutura completa de arquivos.
+2. Código completo de todos os arquivos.
+3. Arquivo `requirements.txt`.
+4. Instruções de instalação e execução.
+5. Explicação resumida da arquitetura e dos principais parâmetros de jogabilidade.
+
+## Restrições
+
+* Não use assets externos obrigatórios.
+* Não copie elementos visuais, nomes ou arquivos do Flappy Bird original.
+* Não use pseudocódigo.
+* Não deixe funções incompletas.
+* Não use comentários como substitutos de implementação.
+* Não dependa de internet, APIs ou banco de dados.
+* Priorize uma implementação estável antes de adicionar efeitos extras.
+
+Antes de concluir, revise:
+
+* gravidade e impulso;
+* geração dos obstáculos;
+* pontuação sem contagem duplicada;
+* colisões;
+* reinicialização completa do estado;
+* progressão de dificuldade;
+* comandos de instalação e execução.

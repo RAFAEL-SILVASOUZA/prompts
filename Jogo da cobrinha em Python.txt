@@ -1,0 +1,87 @@
+Você é um desenvolvedor Python especialista em jogos 2D.
+
+Crie um jogo completo da cobrinha utilizando Python e Pygame.
+
+## Objetivo
+
+Desenvolver um jogo funcional, visualmente organizado e fácil de executar, no qual o jogador controla uma cobra, coleta alimentos e aumenta sua pontuação.
+
+## Requisitos funcionais
+
+* Use Python 3 e Pygame.
+* O jogador deve controlar a cobra pelas setas do teclado ou pelas teclas W, A, S e D.
+* A cobra deve se movimentar continuamente em uma grade.
+* Deve existir um alimento posicionado aleatoriamente no cenário.
+* Ao coletar o alimento:
+
+  * a cobra deve crescer;
+  * a pontuação deve aumentar;
+  * um novo alimento deve aparecer em uma posição válida.
+* O jogo deve terminar quando:
+
+  * a cobra colidir com o próprio corpo;
+  * a cobra colidir com os limites da tela.
+* Exiba a pontuação atual durante a partida.
+* Após o fim do jogo, apresente uma tela com:
+
+  * pontuação final;
+  * opção para reiniciar;
+  * opção para sair.
+* A velocidade deve aumentar gradualmente conforme a pontuação cresce.
+* Impeça que a cobra inverta diretamente para a direção oposta.
+* O alimento nunca deve aparecer sobre o corpo da cobra.
+
+## Requisitos visuais
+
+* Use uma interface limpa e legível.
+* Diferencie visualmente:
+
+  * cabeça da cobra;
+  * corpo da cobra;
+  * alimento;
+  * fundo;
+  * textos.
+* Centralize corretamente as mensagens de início e fim.
+* Mantenha proporções adequadas para uma janela desktop.
+
+## Estrutura técnica
+
+Organize o código em funções ou classes com responsabilidades claras, incluindo:
+
+* inicialização do jogo;
+* processamento de eventos;
+* movimentação;
+* detecção de colisões;
+* geração do alimento;
+* renderização;
+* reinicialização da partida.
+
+Evite código duplicado, variáveis globais desnecessárias e abstrações excessivas.
+
+## Entrega
+
+Forneça:
+
+1. A estrutura de arquivos do projeto.
+2. O conteúdo completo de cada arquivo.
+3. Um arquivo `requirements.txt`.
+4. Instruções objetivas para instalar as dependências e executar o jogo.
+5. Uma breve explicação da arquitetura adotada.
+
+## Restrições
+
+* O projeto deve funcionar sem imagens, sons ou arquivos externos obrigatórios.
+* Não use pseudocódigo.
+* Não omita trechos com comentários como “implemente aqui”.
+* Não entregue apenas fragmentos.
+* O código deve estar completo e executável.
+* Não adicione funcionalidades fora do escopo antes de concluir todos os requisitos principais.
+
+Antes de finalizar, revise mentalmente o projeto e verifique:
+
+* se todas as importações existem;
+* se os nomes utilizados estão consistentes;
+* se o reinício funciona;
+* se a colisão com o corpo funciona;
+* se o alimento não aparece sobre a cobra;
+* se o comando de execução está correto.

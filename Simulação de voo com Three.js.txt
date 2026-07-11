@@ -1,0 +1,219 @@
+Você é um desenvolvedor sênior especializado em JavaScript, Three.js, computação gráfica e simulações interativas em tempo real.
+
+Crie uma simulação de voo 3D executável no navegador utilizando Three.js.
+
+## Objetivo
+
+Desenvolver uma experiência interativa em terceira pessoa na qual o usuário controla uma aeronave sobre um ambiente 3D, com movimentação fluida, câmera dinâmica, terreno, céu e instrumentos básicos de voo.
+
+O objetivo é criar uma simulação arcade convincente. Não é necessário implementar física aeronáutica profissional.
+
+## Stack obrigatória
+
+* HTML5.
+* CSS3.
+* JavaScript moderno com módulos ES.
+* Three.js.
+* Vite para desenvolvimento e build.
+* Não utilize React, Vue, Angular ou outro framework de interface.
+* Não utilize serviços externos obrigatórios.
+
+## Controles
+
+Implemente os seguintes controles:
+
+* W e S: aumentar ou reduzir a potência.
+* A e D: controlar a rolagem lateral.
+* Setas para cima e para baixo: controlar o pitch.
+* Setas para esquerda e direita: controlar o yaw.
+* R: reiniciar a aeronave.
+* C: alternar o modo da câmera.
+* P ou Escape: pausar e continuar.
+* Mouse: movimentar suavemente a câmera, caso seja tecnicamente apropriado.
+
+Exiba os controles em um painel de ajuda que possa ser ocultado.
+
+## Comportamento da aeronave
+
+A aeronave deve possuir:
+
+* posição;
+* velocidade;
+* aceleração;
+* potência do motor;
+* pitch;
+* yaw;
+* roll;
+* velocidade mínima e máxima;
+* arrasto simplificado;
+* resposta progressiva aos comandos;
+* suavização para evitar movimentos instantâneos ou bruscos.
+
+A direção do movimento deve acompanhar a orientação da aeronave.
+
+Implemente uma sustentação simplificada:
+
+* com velocidade suficiente, a aeronave deve conseguir manter ou ganhar altitude;
+* com velocidade muito baixa, deve perder altitude;
+* comandos excessivos devem reduzir a estabilidade;
+* não é necessário reproduzir equações completas de aerodinâmica.
+
+## Mundo 3D
+
+Crie um ambiente contendo:
+
+* céu;
+* iluminação direcional simulando o sol;
+* luz ambiente;
+* terreno amplo;
+* montanhas ou elevações simples;
+* árvores, rochas ou construções distribuídas pelo cenário;
+* pista de pouso visível;
+* nuvens simples;
+* névoa para aumentar a sensação de profundidade.
+
+Utilize geometrias procedurais e materiais do Three.js. Evite depender de modelos 3D externos.
+
+O terreno pode ser criado com:
+
+* plano subdividido;
+* variação procedural de altura;
+* ruído matemático simples;
+* cores diferentes conforme a altitude.
+
+## Aeronave
+
+Modele uma aeronave original usando primitivas geométricas do Three.js, incluindo:
+
+* fuselagem;
+* asas;
+* estabilizadores;
+* cauda;
+* hélice ou turbina;
+* luzes de navegação.
+
+Agrupe as partes para que toda a aeronave seja movimentada e rotacionada como uma unidade.
+
+Adicione uma animação simples à hélice ou turbina.
+
+## Câmeras
+
+Implemente pelo menos dois modos:
+
+1. Câmera de perseguição:
+
+   * posicionada atrás e acima da aeronave;
+   * movimento suavizado;
+   * deve acompanhar a orientação sem produzir tremores.
+
+2. Câmera do cockpit ou primeira pessoa:
+
+   * posicionada próxima à parte frontal;
+   * alinhada à orientação da aeronave.
+
+A tecla C deve alternar entre os modos.
+
+## Interface
+
+Crie um HUD usando HTML e CSS sobre o canvas, exibindo:
+
+* velocidade;
+* altitude;
+* potência;
+* direção aproximada;
+* pitch;
+* roll;
+* estado da simulação;
+* aviso de baixa velocidade;
+* aviso de colisão;
+* FPS opcional.
+
+O HUD deve ser legível, discreto e responsivo.
+
+## Colisões e reinicialização
+
+Implemente:
+
+* limite mínimo de altitude;
+* colisão aproximada com o terreno;
+* detecção de queda;
+* mensagem de acidente;
+* bloqueio temporário dos controles após a colisão;
+* reinicialização pela tecla R.
+
+Ao reiniciar, restaure:
+
+* posição;
+* rotação;
+* velocidade;
+* potência;
+* câmera;
+* estado da interface.
+
+## Qualidade técnica
+
+* Utilize `requestAnimationFrame`.
+* Calcule o movimento considerando `deltaTime`.
+* Limite valores extremos de `deltaTime`.
+* Separe responsabilidades em arquivos ou classes.
+* Remova listeners e recursos quando necessário.
+* Configure corretamente o redimensionamento da janela.
+* Considere o `devicePixelRatio`, mas limite-o para evitar perda excessiva de desempenho.
+* Reutilize geometrias e materiais quando possível.
+* Use instâncias para objetos repetidos, caso isso simplifique e melhore o desempenho.
+* Não crie novos objetos desnecessários dentro do loop principal.
+
+## Estrutura sugerida
+
+Organize o projeto de maneira semelhante a:
+
+* `index.html`;
+* `src/main.js`;
+* `src/core/Game.js`;
+* `src/entities/Aircraft.js`;
+* `src/world/World.js`;
+* `src/controllers/FlightController.js`;
+* `src/cameras/CameraController.js`;
+* `src/ui/Hud.js`;
+* `src/styles.css`;
+* `package.json`.
+
+A estrutura pode ser ajustada quando houver justificativa técnica, mas o projeto deve permanecer simples de compreender.
+
+## Entrega obrigatória
+
+Forneça:
+
+1. Estrutura completa de diretórios.
+2. Conteúdo integral de cada arquivo.
+3. `package.json` configurado.
+4. Comandos para:
+
+   * instalar;
+   * executar em desenvolvimento;
+   * gerar build de produção.
+5. Explicação resumida da arquitetura.
+6. Explicação dos principais cálculos de movimentação e sustentação simplificada.
+
+## Restrições
+
+* Não entregue apenas uma demonstração conceitual.
+* Não use pseudocódigo.
+* Não omita código com expressões como “restante da implementação”.
+* Não dependa de assets pagos ou APIs externas.
+* Não crie um único arquivo JavaScript excessivamente grande.
+* Não implemente física complexa antes de garantir que os controles básicos estejam funcionando.
+* O projeto deve iniciar sem erros após `npm install` e `npm run dev`.
+
+Antes de finalizar, faça uma revisão lógica completa e confirme:
+
+* compatibilidade entre os imports;
+* existência de todos os arquivos citados;
+* inicialização correta do Three.js;
+* funcionamento do loop de animação;
+* cálculo por `deltaTime`;
+* alternância das câmeras;
+* funcionamento da tecla R;
+* atualização correta do HUD;
+* colisão com o terreno;
+* ausência de dependências não declaradas.
